@@ -53,13 +53,13 @@ class Migration_Users_Init extends \CI_Migration
                 'null' => false,
                 'default' => ''
             ),
-            'firstname' => array(
+            'firstName' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => false,
                 'default' => ''
             ),
-            'lastname' => array(
+            'lastName' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => false,

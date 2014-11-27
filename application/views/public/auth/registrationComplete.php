@@ -22,47 +22,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 /**
  * User: Stefan
- * Date: 24.11.2014
- * Time: 19:57
+ * Date: 27.11.2014
+ * Time: 21:46
  */
-abstract class AbstractService
-{
-    /**
-     * Gets a row from the database by its ID
-     *
-     * @param long $id
-     *
-     * @return Row from the database matching the ID
-     */
-    public abstract function GetById($id);
-
-    /**
-     * Gets one or multiple rows from the database where the value is in the column
-     *
-     * @param string $column
-     * @param string $expression
-     * @param mixed $value
-     *
-     * @return One or multiple rows matching the value in the given column
-     */
-    public abstract function Find($column, $expression, $value);
-
-    /**
-     * Deletes a row from the database by its ID
-     *
-     * @param long $id
-     *
-     */
-    public abstract function Delete($id);
-
-    /**
-     * Inserts or Updates a row in the database
-     *
-     * @param mixed $item
-     *
-     */
-    public abstract function Save($item);
-}
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<h2>Registration successfull</h2>
+Welcome <?php echo $user->getUsername(); ?>, you have sucessfully registered a Bugmine account.

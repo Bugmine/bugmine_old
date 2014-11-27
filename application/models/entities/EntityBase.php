@@ -6,7 +6,7 @@
  */
 
 
-abstract class EntityBase {
+abstract class EntityBase extends CI_Model {
     private  $id;
 
     /**

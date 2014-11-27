@@ -38,6 +38,17 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Hash algorithm for password hashing
+ * For algorithms see: http://php.net/manual/en/book.hash.php
+ */
+$config["hash_algorithm"] = "sha256";
+/**
+ * Length of generated salts during registration
+ */
+$config["salt_length"] = 32;
+
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -333,7 +344,7 @@ $config['cache_path'] = '';
 | http://codeigniter.com/user_guide/libraries/sessions.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'ytVBZlkgpXq5OA9ZSKPzPibltkGKqVvd';
 
 /*
 |--------------------------------------------------------------------------

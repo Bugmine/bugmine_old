@@ -46,8 +46,8 @@ class Register extends MY_PublicController
     {
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
         $this->form_validation->set_rules('username', $this->lang->line('auth_username'), 'trim|required|is_unique[' . $this->db->dbprefix("users") . '.username]|xss_clean');
-        $this->form_validation->set_rules('firstname', $this->lang->line('auth_firstname'), 'trim|required|xss_clean');
-        $this->form_validation->set_rules('lastname', $this->lang->line('auth_lastname'), 'trim|required|xss_clean');
+        $this->form_validation->set_rules('firstName', $this->lang->line('auth_firstname'), 'trim|required|xss_clean');
+        $this->form_validation->set_rules('lastName', $this->lang->line('auth_lastname'), 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', $this->lang->line('auth_password'), 'trim|required|matches[confirmpassword]|xss_clean');
         $this->form_validation->set_rules('confirmpassword', $this->lang->line('auth_passwordconfirm'), 'trim|required|xss_clean');
         $this->form_validation->set_rules('email', $this->lang->line('auth_email'), 'trim|required|valid_email|is_unique[' . $this->db->dbprefix("users") . '.email]|xss_clean');
@@ -62,8 +62,8 @@ class Register extends MY_PublicController
             // Create user
             $user = new User();
             $user->setUsername($this->input->post('username'));
-            $user->setFirstname($this->input->post('firstname'));
-            $user->setLastname($this->input->post('lastname'));
+            $user->setFirstName($this->input->post('firstName'));
+            $user->setLastName($this->input->post('lastName'));
             $user->setPassword($pass);
             $user->setSalt($salt);
             $user->setEmail($this->input->post('email'));
@@ -74,7 +74,7 @@ class Register extends MY_PublicController
             $this->email->from('bugmine@stefan-schmid.com', 'Bugmine');
             $this->email->to("stefanschmid35@googlemail.com");
             $this->email->subject('Your Bugmine Registration');
-            $this->email->message("Hello " . $user->getFirstname() . " " . $user->getLastname() . ",<br />your Bugmine Account has been created.<br />Your username is: " . $user->getUsername());
+            $this->email->message("Hello " . $user->getFirstName() . " " . $user->getLastName() . ",<br />your Bugmine Account has been created.<br />Your username is: " . $user->getUsername());
             $this->email->send();
             $this->load->view('public/auth/register');
             $this->load->view('include/footer');

@@ -28,6 +28,7 @@
  * Date: 24.11.2014
  * Time: 20:01
  */
+require_once APPPATH.'models/services/AbstractService.php';
 class UserService extends AbstractService
 {
 
@@ -48,8 +49,8 @@ class UserService extends AbstractService
                 $user->setId($row->id);
                 $user->setUsername($row->username);
                 $user->setEmail($row->email);
-                $user->setFirstname($row->firstname);
-                $user->setLastname($row->lastname);
+                $user->setFirstName($row->firstname);
+                $user->setLastName($row->lastname);
                 $user->setPassword($row->password);
                 $user->setSalt($row->salt);
                 $user->setRegistrationDate($row->registrationdate);
@@ -78,8 +79,8 @@ class UserService extends AbstractService
                 $user->setId($row->id);
                 $user->setUsername($row->username);
                 $user->setEmail($row->email);
-                $user->setFirstname($row->firstname);
-                $user->setLastname($row->lastname);
+                $user->setFirstName($row->firstname);
+                $user->setLastName($row->lastname);
                 $user->setPassword($row->password);
                 $user->setSalt($row->salt);
                 array_push($users, $user);
@@ -108,13 +109,13 @@ class UserService extends AbstractService
      */
     public function Save($item)
     {
-        $result = $this->db->where('id', $item->getId());
+        $result = $this->db->get_where('users', array('id' => $item->getId()));
         $data = array(
             'id' => $item->getId(),
             'username' => $item->getUsername(),
             'email' => $item->getEmail(),
-            'firstname' => $item->getFirstname(),
-            'lastname' => $item->getLastname(),
+            'firstName' => $item->getFirstName(),
+            'lastName' => $item->getLastName(),
             'password' => $item->getPassword(),
             'salt' => $item->getSalt()
         );

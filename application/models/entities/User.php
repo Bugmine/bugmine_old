@@ -22,21 +22,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 /**
  * User: Stefan
  * Date: 23.11.2014
  * Time: 17:35
  */
-
-
-class User extends EntityBase{
+require_once APPPATH.'models/entities/EntityBase.php';
+class User extends EntityBase
+{
     private $username;
+    /**
+     * @var string Password
+     */
     private $password;
+    /**
+     * @var string Salt
+     */
     private $salt;
+    /**
+     * @var string Email
+     */
     private $email;
-    private $firstname;
-    private $lastname;
+    /**
+     * @var string First Name
+     */
+    private $firstName;
+    /**
+     * @var string Last Name
+     */
+    private $lastName;
+    /**
+     * @var DateTime Registration Date
+     */
     private $registrationDate;
+
     /**
      * @return string
      */
@@ -56,33 +76,33 @@ class User extends EntityBase{
     /**
      * @return string
      */
-    public function getFirstname()
+    public function getFirstName()
     {
-        return $this->firstname;
+        return $this->firstName;
     }
 
     /**
      * @param string $firstname
      */
-    public function setFirstname($firstname)
+    public function setFirstName($firstname)
     {
-        $this->firstname = $firstname;
+        $this->firstName = $firstname;
     }
 
     /**
      * @return string
      */
-    public function getLastname()
+    public function getLastName()
     {
-        return $this->lastname;
+        return $this->lastName;
     }
 
     /**
      * @param string $lastname
      */
-    public function setLastname($lastname)
+    public function setLastName($lastname)
     {
-        $this->lastname = $lastname;
+        $this->lastName = $lastname;
     }
 
     /**
