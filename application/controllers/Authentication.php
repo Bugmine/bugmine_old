@@ -51,7 +51,6 @@ class Authentication extends \MY_PublicController
     public function processregistration()
     {
         $this->lang->load('authentication/fields', $this->config->item('language'));
-        //$this->form_validation->set_error_delimiters('<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>', '</div>');
         $this->form_validation->set_rules('username', 'lang:authentication_fields_username', 'trim|required|is_unique[' . $this->db->dbprefix("users") . '.username]|xss_clean');
         $this->form_validation->set_rules('firstname', 'lang:authentication_fields_firstname', 'trim|required|xss_clean');
         $this->form_validation->set_rules('lastname', 'lang:authentication_fields_lastname', 'trim|required|xss_clean');
