@@ -73,6 +73,7 @@ class Frontpage extends MY_PublicController
         //$project->setProjectInfo($this->markdown->parse($project->getProjectInfo()));
         //$project->setProjectInfo($this->parsedownextra->text($project->getProjectInfo()));
         //$data["project"] = $project;
+        $this->load->view('include/header', $this->data);
         $this->load->view('public/frontpage'/*, $data*/);
         $this->load->view('include/footer');
     }

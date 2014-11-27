@@ -39,6 +39,8 @@ class Authentication extends \MY_PublicController
 
     public function login()
     {
+        $this->data["title"] = $this->lang->line('authentication_general_login');
+        $this->load->view('include/header', $this->data);
         $this->load->view('public/auth/login');
         $this->load->view('include/footer');
     }
@@ -50,6 +52,8 @@ class Authentication extends \MY_PublicController
 
     public function register()
     {
+        $this->data["title"] = $this->lang->line('authentication_general_register');
+        $this->load->view('include/header', $this->data);
         $this->load->view('public/auth/register');
         $this->load->view('include/footer');
     }
@@ -82,7 +86,8 @@ class Authentication extends \MY_PublicController
             $this->load->model('services/userService');
             $this->userService->Save($user);
             $user->setPassword("");
-            $data["user"] = $user;
+            $this->data["user"] = $user;
+            $this->load->view('include/header', $this->data);
             $this->load->view('public/auth/registrationComplete', $data);
             $this->load->view('include/footer');
         }
