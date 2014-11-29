@@ -67,8 +67,7 @@ class Authentication extends \MY_PublicController
         $this->form_validation->set_rules('password', 'lang:authentication_fields_password', 'trim|required|matches[passwordconfirmation]|xss_clean');
         $this->form_validation->set_rules('passwordconfirmation', 'lang:authentication_fields_passwordconfirmation', 'trim|required|xss_clean');
         if ($this->form_validation->run() == false) {
-            $this->load->view('public/auth/register');
-            $this->load->view('include/footer');
+            $this->register();
         } else {
             $this->load->helper('string');
             $user = new User();
