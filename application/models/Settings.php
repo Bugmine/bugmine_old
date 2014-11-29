@@ -29,37 +29,45 @@
  *
  * @author Stefan Schmid <stefanschmid35@googlemail.com>
  */
-class Settings extends CI_Model {
+class Settings extends CI_Model
+{
 
     private $title;
     private $projectInfo;
     private $defaultLanguage;
 
-    function getDefaultLanguage() {
+    function getDefaultLanguage()
+    {
         return $this->defaultLanguage;
     }
 
-    function setDefaultLanguage($defaultLanguage) {
+    function setDefaultLanguage($defaultLanguage)
+    {
         $this->defaultLanguage = $defaultLanguage;
     }
 
-    function getProjectInfo() {
+    function getProjectInfo()
+    {
         return $this->projectInfo;
     }
 
-    function setProjectInfo($projectInfo) {
+    function setProjectInfo($projectInfo)
+    {
         $this->projectInfo = $projectInfo;
     }
 
-    function getTitle() {
+    function getTitle()
+    {
         return $this->title;
     }
 
-    function setTitle($title) {
+    function setTitle($title)
+    {
         $this->title = $title;
     }
 
-    function loadSettings() {
+    function loadSettings()
+    {
         $query = $this->db->get($this->db->dbprefix("settings"));
         $result = $query->result_array();
         foreach ($result as $item) {

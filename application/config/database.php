@@ -27,13 +27,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 1.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -98,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $active_group = 'default';
-$query_builder = TRUE;
+$query_builder = true;
 
 $db['default'] = array(
     'dsn' => '',
@@ -108,19 +108,19 @@ $db['default'] = array(
     'database' => 'bugmine',
     'dbdriver' => 'mysqli',
     'dbprefix' => 'bugmine_',
-    'pconnect' => TRUE,
-    'db_debug' => TRUE,
-    'cache_on' => FALSE,
+    'pconnect' => true,
+    'db_debug' => true,
+    'cache_on' => false,
     'cachedir' => '',
     'char_set' => 'utf8',
     'dbcollat' => 'utf8_general_ci',
     'swap_pre' => '',
-    'autoinit' => TRUE,
-    'encrypt' => FALSE,
-    'compress' => FALSE,
-    'stricton' => FALSE,
+    'autoinit' => true,
+    'encrypt' => false,
+    'compress' => false,
+    'stricton' => false,
     'failover' => array(),
-    'save_queries' => TRUE
+    'save_queries' => true
 );
 
 /* End of file database.php */

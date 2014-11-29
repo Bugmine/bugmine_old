@@ -28,7 +28,8 @@
  * Date: 24.11.2014
  * Time: 20:01
  */
-require_once APPPATH.'models/services/AbstractService.php';
+require_once APPPATH . 'models/services/AbstractService.php';
+
 class UserService extends AbstractService
 {
 
@@ -43,17 +44,16 @@ class UserService extends AbstractService
     {
         $result = $this->db->get_where('users', array('id' => $id));
         $user = new User();
-        if ($result->num_rows() > 0)
-        {
+        if ($result->num_rows() > 0) {
             $row = $result->result();
-                $user->setId($row->id);
-                $user->setUsername($row->username);
-                $user->setEmail($row->email);
-                $user->setFirstName($row->firstname);
-                $user->setLastName($row->lastname);
-                $user->setPassword($row->password);
-                $user->setSalt($row->salt);
-                $user->setRegistrationDate($row->registrationdate);
+            $user->setId($row->id);
+            $user->setUsername($row->username);
+            $user->setEmail($row->email);
+            $user->setFirstName($row->firstname);
+            $user->setLastName($row->lastname);
+            $user->setPassword($row->password);
+            $user->setSalt($row->salt);
+            $user->setRegistrationDate($row->registrationdate);
         }
         return $user;
     }
@@ -69,12 +69,10 @@ class UserService extends AbstractService
      */
     public function Find($column, $expression, $value)
     {
-        $result = $this->db->get_where('users', array($column.' '.$expression => $value));
+        $result = $this->db->get_where('users', array($column . ' ' . $expression => $value));
         $users = array();
-        if ($result->num_rows() > 0)
-        {
-            foreach ($result->result() as $row)
-            {
+        if ($result->num_rows() > 0) {
+            foreach ($result->result() as $row) {
                 $user = new User();
                 $user->setId($row->id);
                 $user->setUsername($row->username);

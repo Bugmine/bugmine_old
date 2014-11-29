@@ -7,7 +7,7 @@ if (!defined('BASEPATH'))
  * Name:  Language Switcher
  *
  * Author: Maxim Neaga
- * 	neagamaxim@gmail.com
+ *    neagamaxim@gmail.com
  *
  * Location: https://github.com/maxneaga/CodeIgniter-Language-Switcher/
  *
@@ -16,7 +16,8 @@ if (!defined('BASEPATH'))
  * Description:  Tiny language detection/selection library for CodeIgniter.
  *
  */
-class LanguageDetector {
+class LanguageDetector
+{
 
     // Array of languages supported by the website
     private $langs = array();
@@ -26,7 +27,8 @@ class LanguageDetector {
     private $user_lang;
     private $CI;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->CI = &get_instance();
         $this->CI->load->library('session');
 
@@ -50,10 +52,11 @@ class LanguageDetector {
     }
 
     /**
-     * Check if the user has no language preference 
+     * Check if the user has no language preference
      * Set browser language by default.
      * */
-    private function set_default() {
+    private function set_default()
+    {
         $this->user_lang = $this->CI->session->userdata('lang');
 
         if (!$this->user_lang) {
@@ -63,11 +66,12 @@ class LanguageDetector {
     }
 
     /**
-     * Return the user's language preference 
+     * Return the user's language preference
      *
      * @return      string
      * */
-    public function get() {
+    public function get()
+    {
         // Make sure that the session value is valid
         if (in_array($this->user_lang, $this->langs)) {
             return $this->user_lang;
@@ -83,7 +87,8 @@ class LanguageDetector {
      *
      * @return      bool
      * */
-    public function set($lang) {
+    public function set($lang)
+    {
         // Make sure that the session value is valid => set the session value
         if (array_key_exists($lang, $this->langs)) {
             $this->CI->session->set_userdata(array('lang' => $this->langs[$lang]));

@@ -32,10 +32,11 @@
 class MY_PublicController extends MY_Controller
 {
     protected $data;
+
     function __construct()
     {
         parent::__construct();
-        $this->data["active_controller"] = $this->uri->segment(1)."/".$this->uri->segment(2);
+        $this->data["active_controller"] = $this->uri->segment(1) . "/" . $this->uri->segment(2);
     }
 
 }

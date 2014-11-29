@@ -31,11 +31,17 @@
  */
 class Tickets extends MY_PublicController
 {
-
-    function index()
+    function index($identifier)
     {
-        $this->load->view('public/ticketlist');
+        $this->data["active_controller"] = "tickets";
+        $this->load->view('include/header', $this->data);
+        $this->load->view('public/tickets/ticketlist');
         $this->load->view('include/footer');
+    }
+
+    function view($identifier, $id)
+    {
+
     }
 
 }

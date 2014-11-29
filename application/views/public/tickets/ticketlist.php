@@ -19,9 +19,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <tr class="info">
             <?php elseif ($i == 3): ?>
                 <tr class="danger">
-            <?php elseif ($i == 5): ?>
+            <?php
+            elseif ($i == 5): ?>
                 <tr class="warning">
-            <?php elseif ($i == 7): ?>
+            <?php
+            elseif ($i == 7): ?>
                 <tr class="success">
             <?php endif; ?>
             <td><a href="test<?= $i ?>"><?= $i + 1 ?></a></td>

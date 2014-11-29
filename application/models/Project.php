@@ -29,46 +29,56 @@
  *
  * @author Stefan Schmid <stefanschmid35@googlemail.com>
  */
-class Project extends CI_Model {
+class Project extends CI_Model
+{
 
     private $id;
     private $projectName;
     private $projectInfo;
     private $projectIsPublic;
 
-    function getId() {
+    function getId()
+    {
         return $this->id;
     }
 
-    function getProjectName() {
-        return $this->projectName;
-    }
-
-    function getProjectInfo() {
-        return $this->projectInfo;
-    }
-
-    function getProjectIsPublic() {
-        return $this->projectIsPublic;
-    }
-
-    function setId($id) {
+    function setId($id)
+    {
         $this->id = $id;
     }
 
-    function setProjectName($projectName) {
+    function getProjectName()
+    {
+        return $this->projectName;
+    }
+
+    function setProjectName($projectName)
+    {
         $this->projectName = $projectName;
     }
 
-    function setProjectInfo($projectInfo) {
+    function getProjectInfo()
+    {
+        return $this->projectInfo;
+    }
+
+    function setProjectInfo($projectInfo)
+    {
         $this->projectInfo = $projectInfo;
     }
 
-    function setProjectIsPublic($projectIsPublic) {
+    function getProjectIsPublic()
+    {
+        return $this->projectIsPublic;
+    }
+
+    function setProjectIsPublic($projectIsPublic)
+    {
         $this->projectIsPublic = $projectIsPublic;
     }
 
-    function loadProject($id) {
+    function loadProject($id)
+    {
         $query = $this->db->get_where($this->db->dbprefix("projects"), array('id' => $id));
         $result = $query->result_array();
         $this->setId($result[0]["id"]);

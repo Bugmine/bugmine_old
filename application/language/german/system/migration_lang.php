@@ -27,25 +27,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 3.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 3.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['migration_none_found']			= "Es wurden keine Migrationen gefunden.";
-$lang['migration_not_found']			= "Diese Migration konnte nicht gefunden werden.";
+$lang['migration_none_found'] = "Es wurden keine Migrationen gefunden.";
+$lang['migration_not_found'] = "Diese Migration konnte nicht gefunden werden.";
 $lang['migration_sequence_gap'] = 'Es gibt eine L&uuml;cke bei der Migrationssequenz bei Version: %s.';
-$lang['migration_multiple_version']		= "Dies sind mehrere Migrationen mit der gleichen Versionsnummer: %d.";
-$lang['migration_class_doesnt_exist']	= "Die Migrationsklasse \"%s\" konnte nicht gefunden werden.";
-$lang['migration_missing_up_method']	= "Der Migrationsklasse \"%s\" fehlt eine 'up'-Methode.";
-$lang['migration_missing_down_method']	= "Der Migrationsklasse \"%s\" fehlt eine 'down'-Methode.";
-$lang['migration_invalid_filename']		= "Migration \"%s\" hat einen ung&uuml;ltigen Dateinamen.";
+$lang['migration_multiple_version'] = "Dies sind mehrere Migrationen mit der gleichen Versionsnummer: %d.";
+$lang['migration_class_doesnt_exist'] = "Die Migrationsklasse \"%s\" konnte nicht gefunden werden.";
+$lang['migration_missing_up_method'] = "Der Migrationsklasse \"%s\" fehlt eine 'up'-Methode.";
+$lang['migration_missing_down_method'] = "Der Migrationsklasse \"%s\" fehlt eine 'down'-Methode.";
+$lang['migration_invalid_filename'] = "Migration \"%s\" hat einen ung&uuml;ltigen Dateinamen.";
 
 /* End of file migration_lang.php */
 /* Location: ./system/language/english/migration_lang.php */

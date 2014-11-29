@@ -8,7 +8,8 @@
 namespace application\models;
 
 
-class TicketStatus extends \CI_Model{
+class TicketStatus extends \CI_Model
+{
     private $id;
     private $name;
     private $close;
@@ -61,7 +62,8 @@ class TicketStatus extends \CI_Model{
         $this->name = $name;
     }
 
-    function loadTicketStatus($id) {
+    function loadTicketStatus($id)
+    {
         $query = $this->db->get_where($this->db->dbprefix("ticketstatus"), array('id' => $id));
         $result = $query->result_array();
         $this->setId($result[0]["id"]);

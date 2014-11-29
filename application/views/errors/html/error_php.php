@@ -26,13 +26,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 1.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -40,30 +40,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
 
-<h4>A PHP Error was encountered</h4>
+    <h4>A PHP Error was encountered</h4>
 
-<p>Severity: <?php echo $severity; ?></p>
-<p>Message:  <?php echo $message; ?></p>
-<p>Filename: <?php echo $filepath; ?></p>
-<p>Line Number: <?php echo $line; ?></p>
+    <p>Severity: <?php echo $severity; ?></p>
 
-<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
+    <p>Message:  <?php echo $message; ?></p>
 
-	<p>Backtrace:</p>
-	<?php foreach (debug_backtrace() as $error): ?>
+    <p>Filename: <?php echo $filepath; ?></p>
 
-		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
+    <p>Line Number: <?php echo $line; ?></p>
 
-			<p style="margin-left:10px">
-			File: <?php echo $error['file'] ?><br />
-			Line: <?php echo $error['line'] ?><br />
-			Function: <?php echo $error['function'] ?>
-			</p>
+    <?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === true): ?>
 
-		<?php endif ?>
+        <p>Backtrace:</p>
+        <?php foreach (debug_backtrace() as $error): ?>
 
-	<?php endforeach ?>
+            <?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
 
-<?php endif ?>
+                <p style="margin-left:10px">
+                    File: <?php echo $error['file'] ?><br/>
+                    Line: <?php echo $error['line'] ?><br/>
+                    Function: <?php echo $error['function'] ?>
+                </p>
+
+            <?php endif ?>
+
+        <?php endforeach ?>
+
+    <?php endif ?>
 
 </div>

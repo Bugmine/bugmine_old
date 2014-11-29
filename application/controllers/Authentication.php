@@ -88,7 +88,7 @@ class Authentication extends \MY_PublicController
             $user->setPassword("");
             $this->data["user"] = $user;
             $this->load->view('include/header', $this->data);
-            $this->load->view('public/auth/registrationComplete', $data);
+            $this->load->view('public/auth/registrationComplete', $this->data);
             $this->load->view('include/footer');
         }
     }

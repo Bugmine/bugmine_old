@@ -29,12 +29,15 @@
  *
  * @author Stefan Schmid <stefanschmid35@googlemail.com>
  */
-class MY_Controller extends CI_Controller {
+class MY_Controller extends CI_Controller
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->loadLanguage();
     }
+
     function loadLanguage()
     {
         $availableLanguages = array("english", "german");

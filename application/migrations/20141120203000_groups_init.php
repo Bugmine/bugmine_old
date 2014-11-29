@@ -46,7 +46,6 @@ class Migration_Groups_Init extends \CI_Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => false,
-                'default' => ''
             ),
         );
         $this->dbforge->add_field($fields);

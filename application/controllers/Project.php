@@ -1,13 +1,8 @@
 <?php
-
-/**
- * CodeIgniter
+/*
+ * The MIT License
  *
- * An open source application development framework for PHP 5.2.4 or newer
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014, British Columbia Institute of Technology
+ * Copyright 2014 Stefan Schmid <stefanschmid35@googlemail.com>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,23 +21,24 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- *
- * @package    CodeIgniter
- * @author    EllisLab Dev Team
- * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license    http://opensource.org/licenses/MIT	MIT License
- * @link    http://codeigniter.com
- * @since    Version 1.0.0
- * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['terabyte_abbr'] = 'TB';
-$lang['gigabyte_abbr'] = 'GB';
-$lang['megabyte_abbr'] = 'MB';
-$lang['kilobyte_abbr'] = 'KB';
-$lang['bytes'] = 'Bytes';
+/**
+ * User: Stefan
+ * Date: 29.11.2014
+ * Time: 08:40
+ */
+class Project extends MY_PublicController
+{
+    function index()
+    {
 
-/* End of file number_lang.php */
-/* Location: ./system/language/english/number_lang.php */
+    }
+
+    function view($identifier)
+    {
+        $this->load->view('include/header', $this->data);
+        $this->load->view('public/frontpage'/*, $data*/);
+        $this->load->view('include/footer');
+    }
+} 

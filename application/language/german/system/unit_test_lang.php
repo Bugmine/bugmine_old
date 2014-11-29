@@ -27,36 +27,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 1.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['ut_test_name'] 		= 'Testname';
-$lang['ut_test_datatype']	= 'Test-Datentyp';
-$lang['ut_res_datatype'] 	= 'Erwarteter Datentyp';
-$lang['ut_result'] 			= 'Ergebnis';
-$lang['ut_undefined'] 		= 'Undefinierter Testname';
-$lang['ut_file'] 			= 'Dateiname';
-$lang['ut_line'] 			= 'Zeilennummer';
-$lang['ut_passed'] 			= 'Erfolgreich';
-$lang['ut_failed'] 			= 'Fehlgeschlagen';
-$lang['ut_boolean'] 		= 'Boolescher Wert';
-$lang['ut_integer'] 		= 'Integer';
-$lang['ut_float'] 			= 'Flie&szlig;kommazahl';
-$lang['ut_double'] 			= 'Flie&szlig;kommazahl (Double)';  // can be the same as float
-$lang['ut_string'] 			= 'String';
-$lang['ut_array'] 			= 'Array';
-$lang['ut_object'] 			= 'Objekt';
-$lang['ut_resource'] 		= 'Ressource';
-$lang['ut_null'] 			= 'Null';
-$lang['ut_notes'] 			= 'Notizen';
+$lang['ut_test_name'] = 'Testname';
+$lang['ut_test_datatype'] = 'Test-Datentyp';
+$lang['ut_res_datatype'] = 'Erwarteter Datentyp';
+$lang['ut_result'] = 'Ergebnis';
+$lang['ut_undefined'] = 'Undefinierter Testname';
+$lang['ut_file'] = 'Dateiname';
+$lang['ut_line'] = 'Zeilennummer';
+$lang['ut_passed'] = 'Erfolgreich';
+$lang['ut_failed'] = 'Fehlgeschlagen';
+$lang['ut_boolean'] = 'Boolescher Wert';
+$lang['ut_integer'] = 'Integer';
+$lang['ut_float'] = 'Flie&szlig;kommazahl';
+$lang['ut_double'] = 'Flie&szlig;kommazahl (Double)';  // can be the same as float
+$lang['ut_string'] = 'String';
+$lang['ut_array'] = 'Array';
+$lang['ut_object'] = 'Objekt';
+$lang['ut_resource'] = 'Ressource';
+$lang['ut_null'] = 'Null';
+$lang['ut_notes'] = 'Notizen';
 
 /* End of file unit_test_lang.php */
 /* Location: ./system/language/english/unit_test_lang.php */

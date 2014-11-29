@@ -27,13 +27,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 1.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | and disable it back when you're done.
 |
 */
-$config['migration_enabled'] = TRUE;
+$config['migration_enabled'] = true;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ $config['migration_table'] = 'version';
 | in your code to have the latest migration.
 |
 */
-$config['migration_auto_latest'] = FALSE;
+$config['migration_auto_latest'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,7 +118,7 @@ $config['migration_version'] = 0;
 | Also, writing permission is required within the migrations path.
 |
 */
-$config['migration_path'] = APPPATH.'migrations/';
+$config['migration_path'] = APPPATH . 'migrations/';
 
 /* End of file migration.php */
 /* Location: ./application/config/migration.php */

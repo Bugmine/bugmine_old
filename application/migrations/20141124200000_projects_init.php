@@ -22,42 +22,64 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 /**
  * User: Stefan
- * Date: 20.11.2014
- * Time: 21:16
+ * Date: 28.11.2014
+ * Time: 19:32
  */
-#namespace application\migrations;
-class Migration_User_groups_init extends \CI_Migration
+class Migration_Projects_Init extends CI_Migration
 {
     public function up()
     {
-        $prefix = $this->db->dbprefix;
         $fields = array(
-            'user_id' => array(
+            'id' => array(
                 'type' => 'BIGINT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'null' => false,
+                'auto_increment' => true
             ),
-            'group_id' => array(
-                'type' => 'BIGINT',
-                'constraint' => 11,
-                'unsigned' => true,
+            'name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => 255,
                 'null' => false,
+                'default' => ''
+            ),
+            'description' => array(
+                'type' => 'TEXT',
+                'null' => false,
+                'default' => ''
+            ),
+            'identifier' => array(
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => false,
+                'default' => ''
+            ),
+            'website' => array(
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => false,
+                'default' => ''
             ),
         );
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('id', true);
-        $this->dbforge->add_key('username', true);
-        $this->dbforge->create_table('users_groups', true);
-        // Add foreign keys
-        $this->db->query("ALTER TABLE `" . $prefix . "users_groups` ADD CONSTRAINT `FK_user_groups_user_id` FOREIGN KEY (`user_id`) REFERENCES `" . $prefix . "users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;");
-        $this->db->query("ALTER TABLE `" . $prefix . "users_groups` ADD CONSTRAINT `FK_user_groups_group_id` FOREIGN KEY (`group_id`) REFERENCES `" . $prefix . "groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;");
+        $this->dbforge->add_key('identifier');
+        $this->dbforge->create_table('projects', true);
+        $defaultProject = array(
+            'id' => 1,
+            'name' => "Default project",
+            'description' => "This is the default project created during installation.",
+            'identifier' => 'default_project',
+            'website' => 'http://www.example.com'
+        );
+        echo $this->db->insert('projects', $defaultProject);
     }
 
     public function down()
     {
-        $this->dbforge->drop_table(DBTables::users_groups);
+        $this->dbforge->drop_table('projects');
     }
 } 

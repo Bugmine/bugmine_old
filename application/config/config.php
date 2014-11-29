@@ -27,13 +27,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 1.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -95,7 +95,7 @@ $config['index_page'] = '';
 | 'QUERY_STRING'	Uses $_SERVER['QUERY_STRING']
 |
 */
-$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol'] = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -120,7 +120,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language'] = 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -144,7 +144,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -180,7 +180,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
+$config['composer_autoload'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -230,8 +230,8 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array'] = TRUE;
-$config['enable_query_strings'] = FALSE;
+$config['allow_get_array'] = true;
+$config['enable_query_strings'] = false;
 $config['controller_trigger'] = 'c';
 $config['function_trigger'] = 'm';
 $config['directory_trigger'] = 'd';
@@ -367,17 +367,17 @@ $config['encryption_key'] = 'ytVBZlkgpXq5OA9ZSKPzPibltkGKqVvd';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_driver']			= 'cookie';
-$config['sess_valid_drivers']	= array();
-$config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
-$config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= FALSE;
-$config['sess_table_name']		= 'ci_sessions';
-$config['sess_match_ip']		= FALSE;
-$config['sess_match_useragent']	= TRUE;
-$config['sess_time_to_update']	= 300;
+$config['sess_driver'] = 'cookie';
+$config['sess_valid_drivers'] = array();
+$config['sess_cookie_name'] = 'ci_session';
+$config['sess_expiration'] = 7200;
+$config['sess_expire_on_close'] = false;
+$config['sess_encrypt_cookie'] = false;
+$config['sess_use_database'] = false;
+$config['sess_table_name'] = 'ci_sessions';
+$config['sess_match_ip'] = false;
+$config['sess_match_useragent'] = true;
+$config['sess_time_to_update'] = 300;
 
 /*
 |--------------------------------------------------------------------------
@@ -391,11 +391,11 @@ $config['sess_time_to_update']	= 300;
 | 'cookie_httponly' = Cookie will only be accessible via HTTP(S) (no javascript)
 |
 */
-$config['cookie_prefix']	= '';
-$config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
-$config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
+$config['cookie_prefix'] = '';
+$config['cookie_domain'] = '';
+$config['cookie_path'] = '/';
+$config['cookie_secure'] = false;
+$config['cookie_httponly'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -409,7 +409,7 @@ $config['cookie_httponly'] 	= FALSE;
 | (usually \n) and Windows (\r\n).
 |
 */
-$config['standardize_newlines'] = FALSE;
+$config['standardize_newlines'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -420,7 +420,7 @@ $config['standardize_newlines'] = FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -436,11 +436,11 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-$config['csrf_protection'] = FALSE;
+$config['csrf_protection'] = false;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
-$config['csrf_regenerate'] = TRUE;
+$config['csrf_regenerate'] = true;
 $config['csrf_exclude_uris'] = array();
 
 /*
@@ -463,7 +463,7 @@ $config['csrf_exclude_uris'] = array();
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
 */
-$config['compress_output'] = FALSE;
+$config['compress_output'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -475,7 +475,7 @@ $config['compress_output'] = FALSE;
 | code less readable.
 |
 */
-$config['minify_output'] = FALSE;
+$config['minify_output'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -501,7 +501,7 @@ $config['time_reference'] = 'local';
 | in your view files.  Options are TRUE or FALSE (boolean)
 |
 */
-$config['rewrite_short_tags'] = FALSE;
+$config['rewrite_short_tags'] = false;
 
 
 /*
@@ -537,7 +537,8 @@ $config['proxy_ips'] = '';
 //        @include_once( APPPATH . 'core/' . $class . EXT );
 //    }
 //}
-function __autoload($class) {
+function __autoload($class)
+{
     if (substr($class, 0, 3) !== 'CI_') {
         if (file_exists($file = APPPATH . 'core/' . $class . ".php")) {
             include $file;

@@ -26,36 +26,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 3.0.0
+ * @package    CodeIgniter
+ * @author    EllisLab Dev Team
+ * @copyright    Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright    Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license    http://opensource.org/licenses/MIT	MIT License
+ * @link    http://codeigniter.com
+ * @since    Version 3.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-A PHP Error was encountered
+    A PHP Error was encountered
 
-Severity: <?php echo $severity;?>
-Message:  <?php echo $message;?>
-Filename: <?php echo $filepath;?>
-Line Number: <?php echo $line;?>
+    Severity: <?php echo $severity; ?>
+    Message:  <?php echo $message; ?>
+    Filename: <?php echo $filepath; ?>
+    Line Number: <?php echo $line; ?>
 
-<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
+<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === true): ?>
 
-Backtrace:
-	<?php foreach (debug_backtrace() as $error): ?>
-		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
+    Backtrace:
+    <?php foreach (debug_backtrace() as $error): ?>
+        <?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
 
-	File: <?php echo $error['file'];?>
-	Line: <?php echo $error['line'];?>
-	Function: <?php echo $error['function'];?>
+            File: <?php echo $error['file']; ?>
+            Line: <?php echo $error['line']; ?>
+            Function: <?php echo $error['function']; ?>
 
-		<?php endif ?>
+        <?php endif ?>
 
-	<?php endforeach ?>
+    <?php endforeach ?>
 <?php endif ?>

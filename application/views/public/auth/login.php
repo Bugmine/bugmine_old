@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <input type="password" class="form-control" id="password">
 </div>
 <div class="form-group">
-        <input type="reset" class="btn btn-default" />
-        <input type="submit" class="btn btn-primary" />
+    <input type="reset" class="btn btn-default"/>
+    <input type="submit" class="btn btn-primary"/>
 </div>
 <?php echo form_close(); ?>

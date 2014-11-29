@@ -1,13 +1,13 @@
 <?php
+
 /**
  * User: Stefan
  * Date: 20.11.2014
  * Time: 18:14
  */
-
-
-abstract class EntityBase extends CI_Model {
-    private  $id;
+abstract class EntityBase extends CI_Model
+{
+    private $id;
 
     /**
      * @return long
