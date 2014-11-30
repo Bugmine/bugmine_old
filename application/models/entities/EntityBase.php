@@ -5,6 +5,7 @@
  * Date: 20.11.2014
  * Time: 18:14
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 abstract class EntityBase extends CI_Model
 {
     private $id;

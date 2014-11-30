@@ -28,6 +28,7 @@
  * Date: 23.11.2014
  * Time: 17:26
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 class AuthenticationController extends \MY_PublicController
 {
     function __construct()

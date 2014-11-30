@@ -28,6 +28,7 @@
  * Date: 23.11.2014
  * Time: 17:35
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 require_once APPPATH . 'models/entities/EntityBase.php';
 
 class User extends EntityBase

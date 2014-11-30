@@ -27,6 +27,7 @@
  * Date: 30.11.2014
  * Time: 18:26
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Loader extends CI_Loader
 {
     public function model($model, $name = '', $db_conn = FALSE)

@@ -28,6 +28,7 @@
  * Date: 29.11.2014
  * Time: 14:57
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 require_once APPPATH . 'models/services/AbstractService.php';
 
 class ProjectService extends AbstractService

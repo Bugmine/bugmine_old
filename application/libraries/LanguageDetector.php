@@ -16,6 +16,7 @@ if (!defined('BASEPATH'))
  * Description:  Tiny language detection/selection library for CodeIgniter.
  *
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 class LanguageDetector
 {
 

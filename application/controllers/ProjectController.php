@@ -28,6 +28,7 @@
  * Date: 29.11.2014
  * Time: 08:40
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 class ProjectController extends MY_PublicController
 {
     function __construct()

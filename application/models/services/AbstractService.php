@@ -28,6 +28,7 @@
  * Date: 24.11.2014
  * Time: 19:57
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 abstract class AbstractService extends CI_Model
 {
     /**

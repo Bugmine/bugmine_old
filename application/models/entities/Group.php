@@ -28,6 +28,7 @@
  * Date: 29.11.2014
  * Time: 14:57
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Group extends EntityBase
 {
     /**

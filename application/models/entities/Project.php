@@ -27,6 +27,7 @@
  * Date: 28.11.2014
  * Time: 19:49
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 require_once APPPATH . 'models/entities/EntityBase.php';
 
 class Project extends EntityBase

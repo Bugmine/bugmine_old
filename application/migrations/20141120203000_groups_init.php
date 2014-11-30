@@ -28,7 +28,7 @@
  * Time: 20:50
  */
 #namespace application\migrations;
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Migration_Groups_Init extends \CI_Migration
 {
     public function up()
