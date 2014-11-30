@@ -35,6 +35,7 @@ class AuthenticationController extends \MY_PublicController
         parent::__construct();
         $this->lang->load('authentication/fields', $this->config->item('language'));
         $this->lang->load('authentication/general', $this->config->item('language'));
+        $this->load->model('services/UserService');
     }
 
     public function login()
@@ -82,8 +83,7 @@ class AuthenticationController extends \MY_PublicController
             $this->load->helper('security');
             $password = hash($this->config->item("hash_algorithm"), $password);
             $user->setPassword($password);
-            $this->load->model('services/userService');
-            $this->userService->Save($user);
+            $this->UserService->Save($user);
             $user->setPassword("");
             $this->setBodyData("user", $user);
             $this->loadView('public/auth/registrationComplete');

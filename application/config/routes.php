@@ -92,18 +92,18 @@ $route['translate_uri_dashes'] = false;
 /**
  * Authentication controller
  */
-$route['register'] = 'authenticationController/register';
-$route['login'] = 'authenticationController/login';
+$route['register'] = 'AuthenticationController/register';
+$route['login'] = 'AuthenticationController/login';
 /**
  * Project controller
  */
-$route['project/(:any)'] = 'projectController/view/$1';
+$route['project/(:any)'] = 'ProjectController/view/$1';
 /**
  * Tickets Controller
  */
-$route['project/(:any)/ticket/(:num)'] = 'ticketController/view/$1/$2';
-$route['project/(:any)/tickets'] = 'ticketController/index/$1';
-$route['project/(:any)/createticket'] = 'ticketController/createticket/$1';
+$route['project/(:any)/ticket/(:num)'] = 'TicketController/view/$1/$2';
+$route['project/(:any)/tickets'] = 'TicketController/index/$1';
+$route['project/(:any)/createticket'] = 'TicketController/createticket/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

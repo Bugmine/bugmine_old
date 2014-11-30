@@ -174,7 +174,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('entities/user', 'entities/project');
+$autoload['model'] = array('entities/User', 'entities/Project');
 
 
 /* End of file autoload.php */

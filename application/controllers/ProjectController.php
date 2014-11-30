@@ -33,12 +33,12 @@ class ProjectController extends MY_PublicController
     function __construct()
     {
         parent::__construct();
-        $this->load->model("services/projectService");
+        $this->load->model("services/ProjectService");
     }
 
     function index()
     {
-        $projects = $this->projectService->getAll();
+        $projects = $this->ProjectService->getAll();
         $this->setHeaderData("active_controller", "project_list");
         $this->setHeaderData("title", "Projects"); // TODO: Use language variable
         $this->setBodyData("projects", $projects);
@@ -48,7 +48,7 @@ class ProjectController extends MY_PublicController
     function view($identifier)
     {
         $this->setHeaderData("active_controller", "project_info");
-        $project = $this->projectService->Find("identifier", "=", $identifier);
+        $project = $this->ProjectService->Find("identifier", "=", $identifier);
         $this->setHeaderData("title", $project[0]->getName());
         $this->setBodyData("project", $project[0]);
         $this->load->view('include/header', $this->getHeaderData());
