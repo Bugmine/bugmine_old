@@ -41,7 +41,7 @@ class MY_Controller extends CI_Controller
     function loadLanguage()
     {
         $availableLanguages = array("english", "german");
-        $this->load->library("languagedetector");
+        $this->load->library("languageDetector");
         $languagedetector = new LanguageDetector();
         $lang = $languagedetector->get();
         $this->config->set_item('language', in_array($lang, $availableLanguages) ? $lang : "english");
