@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<h2><?php echo $this->lang->line('authentication_general_register'); ?></h2>
+<h2><?php echo $title; ?></h2>
 <?php if (validation_errors() != false): ?>
     <div class="alert alert-dismissable alert-danger">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <?php echo validation_errors(); ?>
     </div>
 <?php endif; ?>
-<?php echo form_open('authentication/processregistration'); ?>
+<?php echo form_open('authenticationcontroller/processregistration'); ?>
 <div class="form-group <?php if (form_error('username') != false) echo "has-error"; ?>">
     <label class="control-label"
            for="username"><?php echo $this->lang->line('authentication_fields_username'); ?></label>

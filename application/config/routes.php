@@ -86,19 +86,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Frontpage';
+$route['default_controller'] = 'ProjectController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 /**
+ * Authentication controller
+ */
+$route['register'] = 'authenticationcontroller/register';
+$route['login'] = 'authenticationcontroller/login';
+/**
  * Project controller
  */
-$route['project/(:any)'] = 'project/view/$1';
+$route['project/(:any)'] = 'projectcontroller/view/$1';
 /**
  * Tickets Controller
  */
-$route['project/(:any)/ticket/(:num)'] = 'tickets/view/$1/$2';
-$route['project/(:any)/tickets'] = 'tickets/index/$1';
-$route['project/(:any)/createticket'] = 'tickets/createticket/$1';
+$route['project/(:any)/ticket/(:num)'] = 'ticketcontroller/view/$1/$2';
+$route['project/(:any)/tickets'] = 'ticketcontroller/index/$1';
+$route['project/(:any)/createticket'] = 'ticketcontroller/createticket/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

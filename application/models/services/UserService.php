@@ -123,6 +123,29 @@ class UserService extends AbstractService
         } else {
             $this->db->insert('users', $data);
         }
+    }
 
+    /**
+     * Gets all entries from the database
+     * @return array
+     */
+    public function GetAll()
+    {
+        $result = $this->db->get("users");
+        $users = array();
+        if ($result->num_rows() > 0) {
+            foreach ($result->result() as $row) {
+                $user = new User();
+                $user->setId($row->id);
+                $user->setUsername($row->username);
+                $user->setEmail($row->email);
+                $user->setFirstName($row->firstname);
+                $user->setLastName($row->lastname);
+                $user->setPassword($row->password);
+                $user->setSalt($row->salt);
+                array_push($users, $user);
+            }
+        }
+        return $users;
     }
 }

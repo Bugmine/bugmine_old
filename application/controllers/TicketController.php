@@ -1,4 +1,5 @@
 <?php
+
 /*
  * The MIT License
  *
@@ -24,51 +25,23 @@
  */
 
 /**
- * User: Stefan
- * Date: 24.11.2014
- * Time: 19:57
+ * Description of ticket
+ *
+ * @author Stefan Schmid <stefanschmid35@googlemail.com>
  */
-abstract class AbstractService extends CI_Model
+class TicketController extends MY_PublicController
 {
-    /**
-     * Gets all entries from the database
-     * @return array
-     */
-    public abstract function GetAll();
+    function index($identifier)
+    {
+        $this->data["active_controller"] = "tickets";
+        $this->load->view('include/header', $this->data);
+        $this->load->view('public/tickets/ticketlist');
+        $this->load->view('include/footer');
+    }
 
-    /**
-     * Gets a row from the database by its ID
-     *
-     * @param long $id
-     *
-     * @return Row from the database matching the ID
-     */
-    public abstract function GetById($id);
+    function view($identifier, $id)
+    {
 
-    /**
-     * Gets one or multiple rows from the database where the value is in the column
-     *
-     * @param string $column
-     * @param string $expression
-     * @param mixed $value
-     *
-     * @return One or multiple rows matching the value in the given column
-     */
-    public abstract function Find($column, $expression, $value);
+    }
 
-    /**
-     * Deletes a row from the database by its ID
-     *
-     * @param long $id
-     *
-     */
-    public abstract function Delete($id);
-
-    /**
-     * Inserts or Updates a row in the database
-     *
-     * @param mixed $item
-     *
-     */
-    public abstract function Save($item);
 }

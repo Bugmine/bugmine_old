@@ -31,7 +31,9 @@
  */
 class MY_PublicController extends MY_Controller
 {
-    protected $data;
+    private $headerData;
+    private $bodyData;
+    private $footerData;
 
     function __construct()
     {
@@ -39,4 +41,59 @@ class MY_PublicController extends MY_Controller
         $this->data["active_controller"] = $this->uri->segment(1) . "/" . $this->uri->segment(2);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getBodyData()
+    {
+        return $this->bodyData;
+    }
+
+    /**
+     * @param string $key
+     * @param mixed $value
+     */
+    public function setBodyData($key, $value)
+    {
+        $this->bodyData[$key] = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFooterData()
+    {
+        return $this->footerData;
+    }
+
+    /**
+     * @param string $key
+     * @param $value
+     */
+    public function setFooterData($key, $value)
+    {
+        $this->footerData[$key] = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeaderData()
+    {
+        return $this->headerData;
+    }
+
+    /**
+     * @param string $key
+     * @param $value
+     */
+    public function setHeaderData($key, $value)
+    {
+        $this->headerData[$key] = $value;
+    }
+    public function loadView($view) {
+        $this->load->view('include/header', $this->getHeaderData());
+        $this->load->view($view, $this->getBodyData());
+        $this->load->view('include/footer', $this->getFooterData());
+    }
 }

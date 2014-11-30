@@ -125,7 +125,7 @@ $autoload['drivers'] = array('session');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'date', 'form');
+$autoload['helper'] = array('url', 'date');
 
 
 /*
@@ -174,7 +174,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('entities/user');
+$autoload['model'] = array('entities/user', 'entities/project');
 
 
 /* End of file autoload.php */

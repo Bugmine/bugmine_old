@@ -22,23 +22,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 /**
  * User: Stefan
- * Date: 29.11.2014
- * Time: 08:40
+ * Date: 30.11.2014
+ * Time: 17:00
  */
-class Project extends MY_PublicController
-{
-    function index()
-    {
-
-    }
-
-    function view($identifier)
-    {
-        $this->load->view('include/header', $this->data);
-        $this->load->view('public/frontpage'/*, $data*/);
-        $this->load->view('include/footer');
-    }
-} 
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<h2><?php echo $title; ?></h2>
+<a href="<?php echo $project->getWebsite(); ?>"><?php echo $project->getWebsite(); ?></a>
+<br />
+<?php echo $project->getDescription(); ?>

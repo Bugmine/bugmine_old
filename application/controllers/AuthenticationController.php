@@ -28,7 +28,7 @@
  * Date: 23.11.2014
  * Time: 17:26
  */
-class Authentication extends \MY_PublicController
+class AuthenticationController extends \MY_PublicController
 {
     function __construct()
     {
@@ -39,27 +39,27 @@ class Authentication extends \MY_PublicController
 
     public function login()
     {
-        $this->data["title"] = $this->lang->line('authentication_general_login');
-        $this->load->view('include/header', $this->data);
-        $this->load->view('public/auth/login');
-        $this->load->view('include/footer');
+        $this->setHeaderData("active_controller", "login");
+        $this->setHeaderData("title", $this->lang->line('authentication_general_login'));
+        $this->loadView('public/auth/login');
     }
 
     public function index()
     {
-        redirect('authentication/login', 'refresh');
+        redirect('authenticationcontroller/login', 'refresh');
     }
 
     public function register()
     {
-        $this->data["title"] = $this->lang->line('authentication_general_register');
-        $this->load->view('include/header', $this->data);
-        $this->load->view('public/auth/register');
-        $this->load->view('include/footer');
+        $this->setHeaderData("active_controller", "register");
+        $this->setHeaderData("title", $this->lang->line('authentication_general_register'));
+        $this->loadView('public/auth/register');
     }
 
     public function processregistration()
     {
+        $this->setHeaderData("active_controller", "register");
+        $this->setHeaderData("title", $this->lang->line('authentication_general_register'));
         $this->form_validation->set_rules('username', 'lang:authentication_fields_username', 'trim|required|is_unique[' . $this->db->dbprefix("users") . '.username]|xss_clean');
         $this->form_validation->set_rules('firstName', 'lang:authentication_fields_firstname', 'trim|required|xss_clean');
         $this->form_validation->set_rules('lastName', 'lang:authentication_fields_lastname', 'trim|required|xss_clean');
@@ -85,10 +85,8 @@ class Authentication extends \MY_PublicController
             $this->load->model('services/userService');
             $this->userService->Save($user);
             $user->setPassword("");
-            $this->data["user"] = $user;
-            $this->load->view('include/header', $this->data);
-            $this->load->view('public/auth/registrationComplete', $this->data);
-            $this->load->view('include/footer');
+            $this->setBodyData("user", $user);
+            $this->loadView('public/auth/registrationComplete');
         }
     }
 }

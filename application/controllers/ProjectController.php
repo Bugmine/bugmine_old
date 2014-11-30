@@ -1,5 +1,4 @@
 <?php
-
 /*
  * The MIT License
  *
@@ -25,23 +24,35 @@
  */
 
 /**
- * Description of ticket
- *
- * @author Stefan Schmid <stefanschmid35@googlemail.com>
+ * User: Stefan
+ * Date: 29.11.2014
+ * Time: 08:40
  */
-class Tickets extends MY_PublicController
+class ProjectController extends MY_PublicController
 {
-    function index($identifier)
+    function __construct()
     {
-        $this->data["active_controller"] = "tickets";
-        $this->load->view('include/header', $this->data);
-        $this->load->view('public/tickets/ticketlist');
-        $this->load->view('include/footer');
+        parent::__construct();
+        $this->load->model("services/projectService");
     }
 
-    function view($identifier, $id)
+    function index()
     {
-
+        $projects = $this->projectService->getAll();
+        $this->setHeaderData("active_controller", "project_list");
+        $this->setHeaderData("title", "Projects"); // TODO: Use language variable
+        $this->setBodyData("projects", $projects);
+        $this->loadView('public/projects/projectList');
     }
 
-}
+    function view($identifier)
+    {
+        $this->setHeaderData("active_controller", "project_info");
+        $project = $this->projectService->Find("identifier", "=", $identifier);
+        $this->setHeaderData("title", $project[0]->getName());
+        $this->setBodyData("project", $project[0]);
+        $this->load->view('include/header', $this->getHeaderData());
+        $this->load->view('public/projects/viewProject', $this->getBodyData());
+        $this->load->view('include/footer', $this->getFooterData());
+    }
+} 

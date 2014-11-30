@@ -30,11 +30,15 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="<?php if ($active_controller == "/"): ?>
+                    <li class="<?php if ($active_controller == "project_list"): ?>
                                 active
-                                <?php endif; ?>"><a href="<?= site_url("") ?>">Project info</a>
+                                <?php endif; ?>"><a href="<?= site_url("") ?>">Project list</a>
                     </li>
                     <?php if ($this->uri->segment(1) == 'project' && $this->uri->segment(2)): ?>
+                        <li class="<?php if ($active_controller == "project_info"): ?>
+                                active
+                                <?php endif; ?>"><a href="<?= site_url("") ?>">Project info</a>
+                        </li>
                         <li class="<?php if ($active_controller == "tickets/"): ?>
                                     active
                                 <?php endif; ?>"><a
@@ -42,18 +46,18 @@
                         </li>
                         <li class="<?php if ($active_controller == "newticket/"): ?>
                                     active
-                                <?php endif; ?>"><a href="<?= site_url("newticket") ?>">New Ticket</a>
+                                <?php endif; ?>"><a href="<?= site_url($this->uri->slash_segment(1, 'leading') . $this->uri->slash_segment(2, 'both') . "createticket") ?>">New Ticket</a>
                         </li>
                     <?php endif; ?>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="<?php if ($active_controller == "authentication/register"): ?>
+                    <li class="<?php if ($active_controller == "register"): ?>
                                     active
-                                <?php endif; ?>"><a href="<?= site_url("authentication/register") ?>">Register</a>
+                                <?php endif; ?>"><a href="<?= site_url("register") ?>">Register</a>
                     </li>
-                    <li class="<?php if ($active_controller == "authentication/login"): ?>
+                    <li class="<?php if ($active_controller == "login"): ?>
                                     active
-                                <?php endif; ?>"><a href="<?= site_url("authentication/login") ?>">Login</a>
+                                <?php endif; ?>"><a href="<?= site_url("login") ?>">Login</a>
                     </li>
                 </ul>
             </div>
