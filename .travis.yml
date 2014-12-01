@@ -5,3 +5,11 @@ php:
   - 5.4
   - 5.3
   - 5.2
+env:
+  - DB=mysql
+  - DB=mysqli
+  - DB=pgsql
+  - DB=sqlite
+  - DB=pdo/mysql
+  - DB=pdo/pgsql
+  - DB=pdo/sqlite
