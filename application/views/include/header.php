@@ -59,7 +59,7 @@
                     </li>
                     <li class="<?php if ($active_controller == "login"): ?>
                                     active
-                                <?php endif; ?>"><a href="<?php site_url("login"); ?>">Login</a>
+                                <?php endif; ?>"><a href="<?php echo site_url("login"); ?>">Login</a>
                     </li>
                 </ul>
             </div>
