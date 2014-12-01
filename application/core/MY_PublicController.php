@@ -30,6 +30,7 @@
  * @author Stefan Schmid <stefanschmid35@googlemail.com>
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class MY_PublicController extends MY_Controller
 {
     private $headerData;
@@ -40,6 +41,30 @@ class MY_PublicController extends MY_Controller
     {
         parent::__construct();
         $this->data["active_controller"] = $this->uri->segment(1) . "/" . $this->uri->segment(2);
+    }
+
+    public function loadView($view)
+    {
+        $this->load->view('include/header', $this->getHeaderData());
+        $this->load->view($view, $this->getBodyData());
+        $this->load->view('include/footer', $this->getFooterData());
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeaderData()
+    {
+        return $this->headerData;
+    }
+
+    /**
+     * @param string $key
+     * @param $value
+     */
+    public function setHeaderData($key, $value)
+    {
+        $this->headerData[$key] = $value;
     }
 
     /**
@@ -74,27 +99,5 @@ class MY_PublicController extends MY_Controller
     public function setFooterData($key, $value)
     {
         $this->footerData[$key] = $value;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHeaderData()
-    {
-        return $this->headerData;
-    }
-
-    /**
-     * @param string $key
-     * @param $value
-     */
-    public function setHeaderData($key, $value)
-    {
-        $this->headerData[$key] = $value;
-    }
-    public function loadView($view) {
-        $this->load->view('include/header', $this->getHeaderData());
-        $this->load->view($view, $this->getBodyData());
-        $this->load->view('include/footer', $this->getFooterData());
     }
 }

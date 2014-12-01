@@ -30,6 +30,7 @@
  * @author Stefan Schmid <stefanschmid35@googlemail.com>
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class TicketController extends MY_PublicController
 {
     function index($identifier)

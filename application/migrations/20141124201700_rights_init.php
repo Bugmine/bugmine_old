@@ -29,6 +29,7 @@
  * Time: 20:17
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Migration_Rights_Init extends CI_Migration
 {
     public function up()

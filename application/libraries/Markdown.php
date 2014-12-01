@@ -33,6 +33,7 @@
  * @link        http://github.com/jonlabelle.com/ci-markdown
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Markdown
 {
 

@@ -29,6 +29,7 @@
  * Time: 17:26
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class AuthenticationController extends \MY_PublicController
 {
     function __construct()
@@ -51,14 +52,7 @@ class AuthenticationController extends \MY_PublicController
         redirect('authenticationcontroller/login', 'refresh');
     }
 
-    public function register()
-    {
-        $this->setHeaderData("active_controller", "register");
-        $this->setHeaderData("title", $this->lang->line('authentication_general_register'));
-        $this->loadView('public/auth/register');
-    }
-
-    public function processregistration()
+    public function processRegistration()
     {
         $this->setHeaderData("active_controller", "register");
         $this->setHeaderData("title", $this->lang->line('authentication_general_register'));
@@ -89,5 +83,12 @@ class AuthenticationController extends \MY_PublicController
             $this->setBodyData("user", $user);
             $this->loadView('public/auth/registrationComplete');
         }
+    }
+
+    public function register()
+    {
+        $this->setHeaderData("active_controller", "register");
+        $this->setHeaderData("title", $this->lang->line('authentication_general_register'));
+        $this->loadView('public/auth/register');
     }
 }

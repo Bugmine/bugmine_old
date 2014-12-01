@@ -29,7 +29,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<h2><?php echo $title; ?></h2>
-<a href="<?php echo $project->getWebsite(); ?>"><?php echo $project->getWebsite(); ?></a>
-<br />
+    <h2><?php echo $title; ?></h2>
+    <a href="<?php echo $project->getWebsite(); ?>"><?php echo $project->getWebsite(); ?></a>
+    <br/>
 <?php echo $project->getDescription(); ?>

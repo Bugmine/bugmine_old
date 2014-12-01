@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php echo validation_errors(); ?>
     </div>
 <?php endif; ?>
-<?php echo form_open('authenticationcontroller/processregistration'); ?>
+<?php echo form_open('AuthenticationController/processRegistration'); ?>
 <div class="form-group <?php if (form_error('username') != false) echo "has-error"; ?>">
     <label class="control-label"
            for="username"><?php echo $this->lang->line('authentication_fields_username'); ?></label>

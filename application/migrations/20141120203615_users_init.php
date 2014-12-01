@@ -29,6 +29,7 @@
  */
 #namespace application\migrations;
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Migration_Users_Init extends \CI_Migration
 {
     public function up()

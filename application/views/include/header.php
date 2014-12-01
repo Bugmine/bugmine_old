@@ -46,7 +46,9 @@
                         </li>
                         <li class="<?php if ($active_controller == "newticket/"): ?>
                                     active
-                                <?php endif; ?>"><a href="<?= site_url($this->uri->slash_segment(1, 'leading') . $this->uri->slash_segment(2, 'both') . "createticket") ?>">New Ticket</a>
+                                <?php endif; ?>"><a
+                                href="<?= site_url($this->uri->slash_segment(1, 'leading') . $this->uri->slash_segment(2, 'both') . "createticket") ?>">New
+                                Ticket</a>
                         </li>
                     <?php endif; ?>
                 </ul>

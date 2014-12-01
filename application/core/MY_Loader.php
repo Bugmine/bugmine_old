@@ -28,18 +28,15 @@
  * Time: 18:26
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class MY_Loader extends CI_Loader
 {
-    public function model($model, $name = '', $db_conn = FALSE)
+    public function model($model, $name = '', $db_conn = false)
     {
-        if (empty($model))
-        {
+        if (empty($model)) {
             return $this;
-        }
-        elseif (is_array($model))
-        {
-            foreach ($model as $key => $value)
-            {
+        } elseif (is_array($model)) {
+            foreach ($model as $key => $value) {
                 is_int($key) ? $this->model($value, '', $db_conn) : $this->model($key, $value, $db_conn);
             }
 
@@ -49,8 +46,7 @@ class MY_Loader extends CI_Loader
         $path = '';
 
         // Is the model in a sub-folder? If so, parse out the filename and path.
-        if (($last_slash = strrpos($model, '/')) !== FALSE)
-        {
+        if (($last_slash = strrpos($model, '/')) !== false) {
             // The path is in front of the last slash
             $path = substr($model, 0, ++$last_slash);
 
@@ -58,45 +54,37 @@ class MY_Loader extends CI_Loader
             $model = substr($model, $last_slash);
         }
 
-        if (empty($name))
-        {
+        if (empty($name)) {
             $name = $model;
         }
 
-        if (in_array($name, $this->_ci_models, TRUE))
-        {
+        if (in_array($name, $this->_ci_models, true)) {
             return $this;
         }
 
         $CI =& get_instance();
-        if (isset($CI->$name))
-        {
-            show_error('The model name you are loading is the name of a resource that is already being used: '.$name);
+        if (isset($CI->$name)) {
+            show_error('The model name you are loading is the name of a resource that is already being used: ' . $name);
         }
 
-        if ($db_conn !== FALSE && ! class_exists('CI_DB', FALSE))
-        {
-            if ($db_conn === TRUE)
-            {
+        if ($db_conn !== false && !class_exists('CI_DB', false)) {
+            if ($db_conn === true) {
                 $db_conn = '';
             }
 
-            $this->database($db_conn, FALSE, TRUE);
+            $this->database($db_conn, false, true);
         }
 
-        if ( ! class_exists('CI_Model', FALSE))
-        {
+        if (!class_exists('CI_Model', false)) {
             load_class('Model', 'core');
         }
 
-        foreach ($this->_ci_model_paths as $mod_path)
-        {
-            if ( ! file_exists($mod_path.'models/'.$path.$model.'.php'))
-            {
+        foreach ($this->_ci_model_paths as $mod_path) {
+            if (!file_exists($mod_path . 'models/' . $path . $model . '.php')) {
                 continue;
             }
 
-            require_once($mod_path.'models/'.$path.$model.'.php');
+            require_once($mod_path . 'models/' . $path . $model . '.php');
 
             $this->_ci_models[] = $name;
             $CI->$name = new $model();
@@ -104,6 +92,6 @@ class MY_Loader extends CI_Loader
         }
 
         // couldn't find the model
-        show_error('Unable to locate the model you have specified: '.$model);
+        show_error('Unable to locate the model you have specified: ' . $model);
     }
 }

@@ -29,6 +29,7 @@
  * Time: 14:57
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Group extends EntityBase
 {
     /**
@@ -51,5 +52,5 @@ class Group extends EntityBase
     {
         $this->name = $name;
     }
-    
+
 } 
