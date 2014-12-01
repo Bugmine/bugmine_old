@@ -26,12 +26,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             elseif ($i == 7): ?>
                 <tr class="success">
             <?php endif; ?>
-            <td><a href="test<?= $i ?>"><?= $i + 1 ?></a></td>
-            <td><a href="test<?= $i ?>">TestTicket <?= $i + 1 ?></a></td>
-            <td><a href="test<?= $i ?>">High</a></td>
-            <td><a href="test<?= $i ?>">Security</a></td>
-            <td><a href="test<?= $i ?>">Mythos</a></td>
-            <td><a href="test<?= $i ?>"><?= mdate("%d.%m.%Y %H:%i:%s", now()) ?></a></td>
+            <td><a href="test<?php echo $i; ?>"><?= $i + 1 ?></a></td>
+            <td><a href="test<?php echo $i; ?>">TestTicket <?= $i + 1 ?></a></td>
+            <td><a href="test<?php echo $i; ?>">High</a></td>
+            <td><a href="test<?php echo $i; ?>">Security</a></td>
+            <td><a href="test<?php echo $i; ?>">Mythos</a></td>
+            <td><a href="test<?php echo $i; ?>"><?= mdate("%d.%m.%Y %H:%i:%s", now()) ?></a></td>
             </a>
             </tr>
         <?php endfor; ?>
